@@ -25,6 +25,8 @@ jobs:
 
       - name: Install orjson
         run: pip install orjson
+      - name: Install re
+        run: pip install -r requirements.txt
 
       
       # 其他的步骤
