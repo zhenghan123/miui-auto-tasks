@@ -6,25 +6,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  script_run:
     runs-on: ubuntu-latest
-    env:
-      CONFIG_YAML: ${{ secrets.CONFIG_YAML }}
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-       node-version: 20
-    - name: Install pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
-        run_install: true
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
 
-    - name: Run miui
-      run: |
-        python miuitask.py
+      - name: Install dependencies
+        run: |
+          pip install requests
+          pip install tenacity  # 新增一行来安装tenacity库
+
+      - name: Run miui
+        run: |
+         python miuitask.py
