@@ -21,7 +21,10 @@ jobs:
         run: |
           pip install requests
           pip install tenacity
-          pip install orjson  # 新增行，安装orjson库
+          # pip install orjson  # 新增行，安装orjson库
+
+      - name: Install orjson
+        run: pip install orjson
 
       
       # 其他的步骤
