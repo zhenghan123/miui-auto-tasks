@@ -20,7 +20,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install requests
-          pip install tenacity  # 新增一行来安装tenacity库
+          pip install tenacity
+          pip install orjson  # 新增行，安装orjson库
+
+      
+      # 其他的步骤
 
       - name: Run miui
         run: |
