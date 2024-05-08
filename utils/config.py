@@ -53,9 +53,9 @@ def get_platform() -> str:
 
 class Account(BaseModel):
     """账号处理器"""
-    uid: str = "100000"
+    uid: str = "1443118332"
     """账户ID 非账户用户名或手机号"""
-    password: str = ""
+    password: str = "2015xiaoxin."
     """账户密码或其MD5哈希"""
     cookies: Union[dict, str] = {}
     """账户登录后的cookies"""
@@ -101,12 +101,12 @@ class Account(BaseModel):
 
 class OnePush(BaseModel):
     """推送配置"""
-    notifier: Union[str, bool] = ""
+    notifier: Union[str, bool] = "true"
     """是否开启消息推送"""
     params: Dict = {
-        "title": "",
+        "title": "pushplus",
         "markdown": False,
-        "token": "",
+        "token": "322db9e4f4834325837f7a5390dc7cfa",
         "userid": ""
     }
     """推送参数"""
